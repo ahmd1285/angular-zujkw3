@@ -1,0 +1,55 @@
+<p>agecalculator works!</p>
+<table>
+  <tr>
+  <td><label>First name: </label></td>
+  <td><input type="text" [(ngModel)] = "firstName" name="firstName"></td>
+  </tr>
+  <tr>
+  <td><label>Last name: </label></td>
+  <td>
+  <input type="text" [(ngModel)] = "lastName" name="lastName"></td>
+  </tr>
+  <tr>
+  <td><label>e-mail: </label></td>
+  <td><input type="text" [(ngModel)] = "email" name="email"></td>
+  </tr>
+  <tr>
+  <td><label>Age: </label></td>
+  <td><input type="text" [(ngModel)] = "age" name="age"></td>
+  </tr>
+  <tr><td></td><td>
+  <button class="btn btn-primary" [disabled] = "firstName === null || lastName === null || email === null || age === null" (click) = "display($event)">Display</button></td></tr>
+</table>
+  <br>
+<div *ngIf = "allPopulated">
+  <p>
+    <label>Full Name: </label> {{firstName}} {{lastName}}
+    <br>
+    <label>Email: </label>{{email}}
+    <br>
+    <label>Age: </label>{{age}}
+    
+    {{birthYear}}
+  </p>
+</div>
+<table>
+  <tr>
+  <td><label>First no.: </label></td>
+  <td><input type="text" [(ngModel)] = "numone" name="firstNumber"></td>
+  </tr>
+  <tr>
+  <td><label>Second no.: </label></td>
+  <td>
+  <input type="text" [(ngModel)] = "numtwo" name="secondNumber"></td>
+  </tr>
+  <tr><td></td><td>
+  <button class=" btn btn-primary" (click) = "mathOperation($event)">ClickOperation</button></td></tr>
+</table>
+<div class="container-fluid">
+  <p>NgStyle:Display Odd as red and even as blue from an array</p>
+</div>
+<ul>
+  <li *ngFor = "let nim of oddeven">
+    <div [ngStyle]="{color: nim%2===0 ? 'blue':'red'}">{{nim}}</div>
+  </li>
+</ul>
